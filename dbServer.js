@@ -53,8 +53,9 @@ db.getConnection((err, connection) => {
 })
 
 const PORT = 3001
-app.listen(PORT,
-    () => console.log(`Server Started on port ${PORT}...`))
+app.listen(process.env.PORT || PORT, () => {
+    console.log(`Server Started on port ${PORT}...`);
+})
 
 
 
